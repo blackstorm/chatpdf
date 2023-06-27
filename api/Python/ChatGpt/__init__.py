@@ -148,6 +148,7 @@ def GetRrrAnswer(history, approach, overrides, indexNs, indexType):
     qaPromptTemplate = """Below is a history of the conversation so far, and a new question asked by the user that needs to be answered by searching in a knowledge base.
     Generate a search query based on the conversation and the new question.
     The search query should be optimized to find the answer to the question in the knowledge base.
+    You should answer in Chinese.
 
     Chat History:
     {chat_history}
