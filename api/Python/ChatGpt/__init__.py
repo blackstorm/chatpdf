@@ -221,7 +221,7 @@ def GetRrrAnswer(history, approach, overrides, indexNs, indexType):
     try:
         logging.info("Execute step 2")
         # STEP 2: Retrieve relevant documents from the search index with the GPT optimized query    
-        combinePromptTemplate = """Given the following extracted parts of a long document and a question, create a final answer in Chinese with references ("SOURCES").
+        combinePromptTemplate = """Given the following extracted parts of a long document and a question, create a final answer in simplified Chinese with references ("SOURCES").
             If you don't know the answer, just say that you don't know. Don't try to make up an answer.
             ALWAYS return a "SOURCES" section as part in your answer.
 

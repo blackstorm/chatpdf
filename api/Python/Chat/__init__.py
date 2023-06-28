@@ -164,7 +164,7 @@ def GetRrrAnswer(history, approach, overrides, indexNs, indexType, question, ind
     ========= 
     """
 
-    combinePromptTemplate = """Given the following extracted parts of a long document and a question, create a final answer in Chinese with references ("SOURCES").
+    combinePromptTemplate = """Given the following extracted parts of a long document and a question, create a final answer in simplified Chinese with references ("SOURCES").
           If you don't know the answer, just say that you don't know. Don't try to make up an answer.
           ALWAYS return a "SOURCES" section as part in your answer.
 
