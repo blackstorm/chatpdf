@@ -1,3 +1,5 @@
+# coding=utf8
+
 import logging, json, os
 import azure.functions as func
 import openai
@@ -155,7 +157,6 @@ def GetRrrAnswer(history, approach, overrides, indexNs, indexType, question, ind
     I am still improving my Knowledge base. The documentation is located from document. You have a deep understanding of the document.
     You are given the following extracted parts of a long document and a question. Provide an answer with a hyperlink to the PDF or with a code block directly from the PDF. You should only use hyperlinks that are explicitly listed as a source in the context. Do NOT make up a hyperlink that is not listed. If you don't know the answer, just say 'Hmm, I'm not sure.' Don't try to make up an answer. If the question is not about
     the information in document, politely inform them that you are tuned to only answer questions about information in the document.
-    You should answer in Chinese.
     
     ========= 
     {context} 
@@ -163,7 +164,7 @@ def GetRrrAnswer(history, approach, overrides, indexNs, indexType, question, ind
     ========= 
     """
 
-    combinePromptTemplate = """Given the following extracted parts of a long document and a question, create a final answer with references ("SOURCES").
+    combinePromptTemplate = """Given the following extracted parts of a long document and a question, create a final answer in Chinese with references ("SOURCES").
           If you don't know the answer, just say that you don't know. Don't try to make up an answer.
           ALWAYS return a "SOURCES" section as part in your answer.
 

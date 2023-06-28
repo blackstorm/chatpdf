@@ -1,3 +1,5 @@
+# coding=utf8
+
 import logging, json, os
 import azure.functions as func
 import openai
@@ -148,7 +150,6 @@ def GetRrrAnswer(history, approach, overrides, indexNs, indexType):
     qaPromptTemplate = """Below is a history of the conversation so far, and a new question asked by the user that needs to be answered by searching in a knowledge base.
     Generate a search query based on the conversation and the new question.
     The search query should be optimized to find the answer to the question in the knowledge base.
-    You should answer in Chinese.
 
     Chat History:
     {chat_history}
@@ -220,7 +221,7 @@ def GetRrrAnswer(history, approach, overrides, indexNs, indexType):
     try:
         logging.info("Execute step 2")
         # STEP 2: Retrieve relevant documents from the search index with the GPT optimized query    
-        combinePromptTemplate = """Given the following extracted parts of a long document and a question, create a final answer with references ("SOURCES").
+        combinePromptTemplate = """Given the following extracted parts of a long document and a question, create a final answer in Chinese with references ("SOURCES").
             If you don't know the answer, just say that you don't know. Don't try to make up an answer.
             ALWAYS return a "SOURCES" section as part in your answer.
 
